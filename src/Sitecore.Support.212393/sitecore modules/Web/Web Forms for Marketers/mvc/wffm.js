@@ -149,7 +149,8 @@
             if (res.indexOf("<script") === 0) {
                 $form.append(res);
             } else {
-                $form.html(res);
+                //Sitecore.Support.212393
+                $form.replaceWith(res);
             }
 
             $form.find(".field-validation-error").not(":empty").closest(".form-group").addClass("has-error");
